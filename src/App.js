@@ -1,5 +1,6 @@
 import './App.css';
 import { PrintUsers } from './User'; // Exporting to another file and importing.
+import { ButtonStateHandler, TextStateHandler } from './States';
 
 function App() {
   var name = <h1>Abhiram Natarajan</h1>
@@ -10,6 +11,8 @@ function App() {
       {/* {name} */}
       <BasicComponent name="Abhiram" age="24"/> {/* This is how a component is called */}
       <BasicComponent name="Aishu" age="40"/>
+      <ButtonStateHandler/>
+      <TextStateHandler/>
       {/* JSX allows you to put Javascript inside HTML */}
       {
         users.map((val, key) => {
