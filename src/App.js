@@ -4,6 +4,9 @@ import { ButtonStateHandler, TextStateHandler } from './States';
 import { ToDoList } from './ToDoList';
 import { Lifecycle } from './LifeCycle';
 import { APIResponse } from './RestAPI';
+import { RoutingLinks, RoutingPaths } from './Routing';
+import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
+import { HomePage, Menu, Contact } from "./pages/Home";
 
 function App() {
   var name = <h1>Abhiram Natarajan</h1>
@@ -12,8 +15,9 @@ function App() {
   return (
     <div className="App">
       {/* {name} */}
-      <BasicComponent name="Abhiram" age="24"/> {/* This is how a component is called */}
-      <BasicComponent name="Aishu" age="40"/>
+      {/* Basics
+      <BasicComponent name="Abhiram" age="24"/> This is how a component is called 
+      <BasicComponent name="Aishu" age="40"/> */}
       {/* States */}
       {/* <ButtonStateHandler/>
       <TextStateHandler/>
@@ -21,11 +25,21 @@ function App() {
       <Lifecycle/>
       <APIResponse/>
       {/* JSX allows you to put Javascript inside HTML */}
-      {
+      {/* {
         users.map((val, key) => {
           return <PrintUsers name= {val.name} age = {val.age} />;
         }
-      )};
+      )}; */}
+      <div>
+        <Router>
+          <div>
+            <h1>Navbar</h1> 
+            {/* Place all of these inside a separate component */}
+            <RoutingLinks/>
+          </div>
+            <RoutingPaths/>
+        </Router>
+      </div>
     </div>
   );
 }
